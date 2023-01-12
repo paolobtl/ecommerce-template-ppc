@@ -1,0 +1,38 @@
+.outer-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.text {
+    display: block;
+    text-transform: uppercase;
+    padding: 5px 10px;
+}
+
+.inner {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+#isGA360 {
+    margin: auto;
+    display: block;
+    align-self: center;
+}
+
+
+.strikethrough {
+    text-decoration: line-through;
+}
+h1.titolo{
+    text-align: center;
+    font-weight: 700;
+    font-size: x-large;
+}
+
+.inner,
+.text {
+    font-size: x-large;
+}
