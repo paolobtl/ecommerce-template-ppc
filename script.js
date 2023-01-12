@@ -19,7 +19,7 @@ setInterval(function () {
     const now = new Date().getTime();;
     var difference = isga360 ? ga360Sunset - now : gaSunset - now;
     var days = Math.floor(difference / 86400000);
-    var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) + 1;
+    var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((difference % 3600000) / 60000);
     var seconds = Math.floor((difference % 60000) / 1000);
     //console.log(`${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`);
