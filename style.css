@@ -1,38 +1,66 @@
+/* general styling */
+
+:root {
+    --smaller: .75;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: #ffc517;
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+main {
+ margin: auto;
+}
+
 .outer-container {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
-}
-
-.text {
-    display: block;
-    text-transform: uppercase;
-    padding: 5px 10px;
+    color: #333;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase
 }
 
 .inner {
-    display: flex;
-    justify-content: center;
-    padding: 5px;
-}
-
-#isGA360 {
-    margin: auto;
     display: block;
-    align-self: center;
+    font-size: 4.5rem;
 }
 
-
-.strikethrough {
-    text-decoration: line-through;
+.outer {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+    text-shadow: -1px 2px 11px rgb(227 116 0 / 60%);
 }
-h1.titolo{
-    text-align: center;
-    font-weight: 700;
-    font-size: x-large;
+.titolo {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+    text-shadow: -1px 2px 11px rgb(227 116 0 / 60%);
+    font-size: 2em;
 }
 
-.inner,
-.text {
-    font-size: x-large;
+.info {
+    margin: auto;
+    display: flex;
+    flex-direction: column
 }
