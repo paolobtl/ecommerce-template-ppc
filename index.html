@@ -6,8 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <!-- Tag Manager -->
+    <script defer src="assets/js/script.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8E4SH08FZL"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-03HQFL22KX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        var propertyId = ['G-03HQFL22KX', 'G-8E4SH08FZL'];
+        propertyId.forEach(property => {
+            let consentStatus = property == 'G-03HQFL22KX' ? 'granted' : 'denied';
+            console.log(property, consentStatus)
+            gtag('config', property, {
+                'page_title': document.title,
+                'currency': 'EUR',
+                'country': 'IT',
+                'user_id': Math.floor(Math.random() * 9999999)
+            });
+            gtag('consent', 'default', {
+                'ad_storage': consentStatus,
+                'analytics_storage': consentStatus
+            });
+        })
+    </script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
         rel="stylesheet">
 
@@ -825,8 +848,7 @@ https://templatemo.com/tm-571-hexashop
         </div>
     </footer>
 
-    <!-- Tag Manager -->
-    <script src="assets/js/script.js"></script>
+
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
 
