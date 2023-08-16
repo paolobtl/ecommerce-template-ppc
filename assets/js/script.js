@@ -19,21 +19,27 @@ function gtag() {
 }
 gtag('js', new Date());
 
-function configureGtag(configId, adStorage, analyticsStorage) {
-    gtag('config', configId, {
-        'page_title': document.title,
-        'currency': 'EUR',
-        'country': 'IT',
-        'user_id': Math.floor(Math.random() * 9999999)
-    });
-    gtag('consent', 'default', {
-        'ad_storage': adStorage,
-        'analytics_storage': analyticsStorage
-    });
-}
+gtag('config', 'G-03HQFL22KX', {
+    'page_title': document.title,
+    'currency': 'EUR',
+    'country': 'IT',
+    'user_id': Math.floor(Math.random() * 9999999)
+});
+gtag('consent', 'default', {
+    'ad_storage': 'granted',
+    'analytics_storage': 'granted'
+});
+gtag('config', 'G-8E4SH08FZL', {
+    'page_title': document.title,
+    'currency': 'EUR',
+    'country': 'IT',
+    'user_id': Math.floor(Math.random() * 9999999)
+});
+gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied'
+});
 
-configureGtag('G-03HQFL22KX', 'granted', 'granted');
-configureGtag('G-8E4SH08FZL', 'denied', 'denied');
 
 dataLayer.push({
     pageLocation: window.location.pathname,
