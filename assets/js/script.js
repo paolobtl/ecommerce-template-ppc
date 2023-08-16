@@ -19,27 +19,29 @@ function gtag() {
 }
 gtag('js', new Date());
 
-const consentOptions = [{
-    'gcs100': 'G-8E4SH08FZL'
-}, {
-    'gcs111': 'G-03HQFL22KX'
-}]
 
-let consentStatus = '';
-for (let property of consentOptions) {
-    gtag('config', Object.values(property)[0], {
+
+    gtag('config', 'G-8E4SH08FZL', {
         'page_title': document.title,
         'currency': 'EUR',
         'country': 'IT',
         'user_id': Math.floor(Math.random() * 9999999)
     });
-    consentStatus = Object.keys(property)[0] === 'gcs111' ? 'granted' : 'denied';
     gtag('consent', 'default', {
-        'ad_storage': consentStatus,
-        'analytics_storage': consentStatus
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied'
     });
-}
 
+    gtag('config', 'G-03HQFL22KX', {
+        'page_title': document.title,
+        'currency': 'EUR',
+        'country': 'IT',
+        'user_id': Math.floor(Math.random() * 9999999)
+    });
+    gtag('consent', 'default', {
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted'
+    });
 dataLayer.push({
     pageLocation: window.location.pathname,
     timestamp: Date(),
@@ -141,3 +143,10 @@ if (document.location.pathname === '/confirmation.html') {
         }
     });
 }
+
+
+function refreshPage() {
+    location.reload();
+}
+
+setInterval(refreshPage, 10000); // Refresh every 10 seconds (adjust interval as needed)
