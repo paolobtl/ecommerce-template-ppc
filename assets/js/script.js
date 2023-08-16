@@ -14,11 +14,38 @@
     f.parentNode.insertBefore(j, f);
 })(window, document, 'script', 'dataLayer', 'GTM-MJ7X7C9');
 
+function gtag() {
+    dataLayer.push(arguments);
+}
+gtag('js', new Date());
+
+const consentOptions = [{
+    'gcs100': 'G-8E4SH08FZL'
+}, {
+    'gcs111': 'G-03HQFL22KX'
+}]
+
+let consentStatus = '';
+for (let property of consentOptions) {
+    gtag('config', Object.values(property)[0], {
+        'page_title': document.title,
+        'currency': 'EUR',
+        'country': 'IT',
+        'user_id': Math.floor(Math.random() * 9999999)
+    });
+    consentStatus = Object.keys(property)[0] === 'gcs111' ? 'granted' : 'denied';
+    gtag('consent', 'default', {
+        'ad_storage': consentStatus,
+        'analytics_storage': consentStatus
+    });
+}
+
 dataLayer.push({
     pageLocation: window.location.pathname,
     timestamp: Date(),
     epoch: Date.now()
 })
+
 document.querySelectorAll('.fa-shopping-cart')
     .forEach(e => e.parentElement.href = 'confirmation.html');
 
@@ -55,7 +82,7 @@ if (window.location.pathname === '/single-product.html') {
     });
 }
 
-if (document.location.pathname ==='/confirmation.html') {
+if (document.location.pathname === '/confirmation.html') {
     dataLayer.push({
         ecommerce: null
     }); // Clear the previous ecommerce object.
