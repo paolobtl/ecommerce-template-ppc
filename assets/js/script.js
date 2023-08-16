@@ -32,8 +32,8 @@ function configureGtag(configId, adStorage, analyticsStorage) {
     });
 }
 
-configureGtag('G-8E4SH08FZL', 'denied', 'denied');
 configureGtag('G-03HQFL22KX', 'granted', 'granted');
+configureGtag('G-8E4SH08FZL', 'denied', 'denied');
 
 dataLayer.push({
     pageLocation: window.location.pathname,
